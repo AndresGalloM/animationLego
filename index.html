@@ -40,35 +40,81 @@
 
         <section class="side-content">
             <p>Superman!</p>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <img src="https://i.ibb.co/x16pz1x/super-man.png" alt="imagen superman" class="side-content__image">
+            <div></div>
         </section>
 
         <footer class="footer">
-            <div class="footer__item">
-                <img src="" alt="">
+            <div class="footer__item openModal 1">
+                <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="">
             </div>
 
-            <div class="footer__item">
-                <img src="" alt="">
+            <div class="footer__item openModal 2">
+                <img src="https://i.ibb.co/Xzsdvgg/robin.png" alt="">
             </div>
 
-            <div class="footer__item">
-                <img src="" alt="">
+            <div class="footer__item openModal 3">
+                <img src="https://i.ibb.co/M18p91c/batman.webp" alt="">
             </div>
         </footer>
     </section>
 
     <!-- loader -->
-    <!-- <section class="loader"> 
+    <section class="loader"> 
         <div></div>
         <div></div>
         <div></div>
-    </section> -->
+    </section>
 
-    <section>
+    <!-- modal -->
+    <section class="modal hidden">
+        <div class="modal__content">
+            <button id="close">
+                <div class="one"></div>
+                <div class="two"></div>
+            </button>
 
+            <div class="modal__slider">
+                <input type="radio" name="slider" id="radio-1">
+                <input type="radio" name="slider" id="radio-2">
+                <input type="radio" name="slider" id="radio-3">
+
+                <div class="cards">
+                    <label for="radio-1" class="card card-1">
+                        <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="">
+                    </label>
+                    <label for="radio-2" class="card card-2">
+                        <img src="https://i.ibb.co/Xzsdvgg/robin.png" alt="">
+                    </label>
+                    <label for="radio-3" class="card card-3">
+                        <img src="https://i.ibb.co/M18p91c/batman.webp" alt="">
+                    </label>
+                </div>
+
+                <button class="buy">Lo quiero</button>
+            </div>
+        </div>
     </section>
 </body>
+
+<script>
+    const openModal = document.querySelectorAll('.openModal')
+    const modal = document.querySelector('.modal')
+
+    openModal.forEach(button => {
+        button.addEventListener('click', () => {
+            let checked = document.querySelector('#radio-' + button.classList[2]).checked = true
+            modal.classList.remove('hidden')
+            modal.classList.add('visible')
+        })
+    })
+
+    const closeModal = document.getElementById('close')
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove('visible')
+        modal.classList.add('hidden')
+    })
+</script>
+
 </html>
